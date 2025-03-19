@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../core/constants/constants.dart';
+import '../../events/screens/events_screen.dart';
 import 'home_screen.dart';
 
 int selectedIndex = 0;
@@ -17,13 +19,56 @@ class BottomBar extends StatefulWidget {
 class _BottomBarState extends State<BottomBar> {
   final List<Widget> _widgets = [
     const HomeScreen(),
-    const HomeScreen(),
-    const HomeScreen(),
-    const HomeScreen(),
+    const EventScreen(),
+    const SizedBox(
+      child: Center(
+        child: Text(
+          "News",
+          style: TextStyle(
+            color: Colors.grey,
+          ),
+        ),
+      ),
+    ),
+    const SizedBox(
+      child: Center(
+        child: Text(
+          "Profile",
+          style: TextStyle(
+            color: Colors.grey,
+          ),
+        ),
+      ),
+    ),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        surfaceTintColor: Colors.white,
+        shadowColor: Colors.grey,
+        elevation: 0.7,
+        leadingWidth: 100,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 20, bottom: 8),
+          child: Image.asset(
+            height: 150,
+            // width: 100,
+            Constants.kmccLogo,
+            fit: BoxFit.contain,
+          ),
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: GestureDetector(
+              onTap: () {},
+              child: SvgPicture.asset(Constants.bellIcon),
+            ),
+          )
+        ],
+      ),
       body: _widgets[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedIndex,
@@ -68,7 +113,7 @@ class _BottomBarState extends State<BottomBar> {
                   BlendMode.srcIn),
               height: 25.sp,
             ),
-            label: "Event",
+            label: "Events",
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(

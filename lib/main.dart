@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -5,10 +6,10 @@ import 'features/home/screens/bottom_bar.dart';
 
 void main() {
   runApp(
-    const MainApp(),
-    // DevicePreview(builder: (context) {
-    //   return const MainApp();
-    // }),
+    // const MainApp(),
+    DevicePreview(builder: (context) {
+      return const MainApp();
+    }),
   );
 }
 

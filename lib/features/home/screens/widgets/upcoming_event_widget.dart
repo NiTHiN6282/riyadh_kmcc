@@ -218,6 +218,7 @@ class UpcomingEventWidget extends StatelessWidget {
                         SvgPicture.asset(
                           Constants.location,
                           height: 14.67.sp,
+                          // color: const Color(0xff716E90),
                         ),
                         SizedBox(
                           width: 5.sp,

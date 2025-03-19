@@ -30,6 +30,9 @@ class LatestFromKmccWidget extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
+                SizedBox(
+                  height: 5.sp,
+                ),
                 Text(
                   "Stay informed with the latest KMCC updates.",
                   style: TextStyle(
@@ -52,7 +55,7 @@ class LatestFromKmccWidget extends StatelessWidget {
             right: 22.sp,
           ),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16.sp),
+            borderRadius: BorderRadius.circular(8.sp),
             image: const DecorationImage(
               image: CachedNetworkImageProvider(
                 "https://s3-alpha-sig.figma.com/img/cb05/e0fd/e7810544f16a6f6235f2f0c932d2e7cd?Expires=1742774400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=ivPzwH-8-K6lQinHRyR~4KznBmJ7uE4tDrqWqlx~REngiszYe1GomuuiFFPvFODfLfavCQu9E4Kj~6f3rZCDRV1aPZ2vDRRr40O970lNT-bMMQK2VPVu01QGLDXuoybJ8TgXn-SKL-DNJdxpYHaqUxIOMIBdMR9vPLm7J4U~LrV7GVR5uVhoGpc4TF6~v-ahg-TBcZhHrw47PX4kLA5w-FUE1JSJ8rXNy2W1xCEolYsCzLe18jR0kECCXRxmw7WS0bGYNgJCMxO0Wzt2330kRV5BofV1pxs2Q07hzimDU6eWjIewOJ1jBQE8c1NT9iePblDtIPhY1-A0rZ9Op23brw__",
@@ -69,15 +72,15 @@ class LatestFromKmccWidget extends StatelessWidget {
                 child: Container(
                   height: 134.sp,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16.sp),
+                    borderRadius: BorderRadius.circular(8.sp),
                     gradient: LinearGradient(
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: [
                         Colors.transparent,
                         const Color(0xff111111).withOpacity(0.05),
-                        const Color(0xff080808).withOpacity(0.5),
-                        const Color(0xff0E0E0E).withOpacity(0.7),
+                        const Color(0xff080808).withOpacity(0.4),
+                        const Color(0xff0E0E0E).withOpacity(0.85),
                         const Color(0xff000000),
                         // const Color(0xff111111),
                       ],
@@ -130,10 +133,13 @@ class LatestFromKmccWidget extends StatelessWidget {
                         "Jul 10, 2023",
                         maxLines: 3,
                         style: GoogleFonts.inter(
-                          fontSize: 12.sp,
-                          color: const Color(0xffB8B8B8),
+                          fontSize: 10.sp,
+                          color: const Color.fromARGB(255, 219, 219, 219),
                           fontWeight: FontWeight.w500,
                         ),
+                      ),
+                      SizedBox(
+                        height: 6.sp,
                       ),
                       SizedBox(
                         width: 295.sp,
@@ -232,7 +238,7 @@ class LatestFromKmccWidget extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: 11.sp,
+                      height: 8.sp,
                     ),
                     Text(
                       "Jul 14, 2023",

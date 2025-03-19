@@ -56,7 +56,7 @@ class OurExclusiveMembersWidget extends StatelessWidget {
               margin:
                   (index + 1) == 3 ? EdgeInsets.only(right: 22.51.sp) : null,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(20.sp),
                 color: Colors.transparent,
               ),
               child: Container(

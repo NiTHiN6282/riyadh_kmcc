@@ -39,12 +39,15 @@ class JoinGoldCoinProgramWidget extends StatelessWidget {
             ),
           ),
           SizedBox(
+            height: 5.sp,
+          ),
+          SizedBox(
             width: 360.sp,
             child: Text(
               "Contribute monthly and stand a chance to win exciting rewards!",
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: Palette.heading2,
+                color: Palette.subtitle2.withOpacity(0.7),
                 fontFamily: FontConstants.SfProRegular,
                 fontSize: 16.sp,
               ),

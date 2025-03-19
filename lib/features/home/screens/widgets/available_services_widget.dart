@@ -89,11 +89,14 @@ class AvailableServicesWidget extends StatelessWidget {
                       SizedBox(
                         width: 18.5.sp,
                       ),
-                      Image.asset(
-                        Constants.availServices,
-                        width: 118.sp,
-                        height: 137.sp,
-                        fit: BoxFit.cover,
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(12.sp),
+                        child: Image.asset(
+                          Constants.availServices,
+                          width: 118.sp,
+                          height: 137.sp,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                       SizedBox(
                         width: 10.sp,
@@ -207,7 +210,7 @@ class AvailableServicesWidget extends StatelessWidget {
           },
         ),
         SizedBox(
-          height: 20.5.sp,
+          height: 14.5.sp,
         ),
         TextButton(
           onPressed: () {},
