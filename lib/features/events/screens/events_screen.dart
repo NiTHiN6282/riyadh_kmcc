@@ -38,6 +38,31 @@ class _EventScreenState extends State<EventScreen> {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        surfaceTintColor: Colors.white,
+        shadowColor: Colors.grey,
+        elevation: 0.7,
+        leadingWidth: 100,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 20, bottom: 8),
+          child: Image.asset(
+            height: 150,
+            // width: 100,
+            Constants.kmccLogo,
+            fit: BoxFit.contain,
+          ),
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: GestureDetector(
+              onTap: () {},
+              child: SvgPicture.asset(Constants.bellIcon),
+            ),
+          )
+        ],
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -342,7 +367,10 @@ class _EventScreenState extends State<EventScreen> {
             SizedBox(
               height: 46.sp,
             ),
-            const Divider(),
+            Divider(
+              thickness: 1.sp,
+              color: const Color(0xffF0F0F0),
+            ),
             SizedBox(
               height: 20.sp,
             ),

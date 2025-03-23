@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
+import '../../../core/constants/constants.dart';
 import 'widgets/available_services_widget.dart';
 import 'widgets/career_opportunities_widget.dart';
 import 'widgets/constitution_committee_widget.dart';
@@ -24,6 +26,31 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        surfaceTintColor: Colors.white,
+        shadowColor: Colors.grey,
+        elevation: 0.7,
+        leadingWidth: 100,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 20, bottom: 8),
+          child: Image.asset(
+            height: 150,
+            // width: 100,
+            Constants.kmccLogo,
+            fit: BoxFit.contain,
+          ),
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: GestureDetector(
+              onTap: () {},
+              child: SvgPicture.asset(Constants.bellIcon),
+            ),
+          )
+        ],
+      ),
       backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(

@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../../core/constants/constants.dart';
 import '../../../../core/constants/font_constants.dart';
 import '../../../../theme/palette.dart';
+import '../../../travel/screens/travel_log.dart';
 
 class RecentTravellersWidget extends StatelessWidget {
   const RecentTravellersWidget({
@@ -32,27 +33,36 @@ class RecentTravellersWidget extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    "See All",
-                    style: TextStyle(
-                      fontSize: 16.sp,
-                      fontFamily: FontConstants.SfProRegular,
-                      fontWeight: FontWeight.w400,
-                      color: Palette.seeAllColor,
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const TravelLog(),
+                      ));
+                },
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      "See All",
+                      style: TextStyle(
+                        fontSize: 16.sp,
+                        fontFamily: FontConstants.SfProRegular,
+                        fontWeight: FontWeight.w400,
+                        color: Palette.seeAllColor,
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 5.sp,
-                  ),
-                  SvgPicture.asset(
-                    Constants.seeAll,
-                    width: 6.43.sp,
-                    height: 9.sp,
-                  )
-                ],
+                    SizedBox(
+                      width: 5.sp,
+                    ),
+                    SvgPicture.asset(
+                      Constants.seeAll,
+                      width: 6.43.sp,
+                      height: 9.sp,
+                    )
+                  ],
+                ),
               )
             ],
           ),
