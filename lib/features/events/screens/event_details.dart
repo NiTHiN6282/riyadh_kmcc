@@ -1,10 +1,12 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:riyadh_kmcc_new/core/constants/font_constants.dart';
+import 'package:riyadh_kmcc_new/features/home/screens/widgets/social_footer_widget.dart';
 
 import '../../../core/constants/constants.dart';
+import '../../../theme/palette.dart';
 
 class EventDetails extends StatefulWidget {
   const EventDetails({super.key});
@@ -14,6 +16,11 @@ class EventDetails extends StatefulWidget {
 }
 
 class _EventDetailsState extends State<EventDetails> {
+  List<String> highlights = [
+    "Participants will engage in various sports, including football, cricket, badminton, and athletics.",
+    "Evenings will feature cultural programs showcasing traditional music and dance.",
+    "A variety of food stalls offering traditional Kerala cuisine will be available throughout the event.",
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,9 +59,8 @@ class _EventDetailsState extends State<EventDetails> {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(12.sp),
-                child: CachedNetworkImage(
-                  imageUrl:
-                      "https://s3-alpha-sig.figma.com/img/cee0/ae78/093541149c79878e643c9d8866e3a994?Expires=1743379200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Ss7yKYp~kH2QK4DyDPwGphrz1dw0peDm9BAzhQyuPDQ7oFDGJa4UJztv34b3x~1j7ZYOaRD-JiWwZhenU1a32qNf6o8BEfi~SRqijrHgVa--Mo~W1h6wR7sl9fd0F73lymtmjJzR8RBVjkmUU~qWT4snLRzqtg6IDe78rQduhmheiA8MsK7mNxn2cRHylWrzW1uiVmI3PzQKGoU7XhFGSgwy46yN7ksCcLBDvL7icKQWcw5Urd-0I14NCTQ1aV4gt2CS2wz42JWoCsb8HF-eHgj7knE0pz6lKTHLr~j6TW7iN9A0cturw~g433nBU5g3VyN8acx4uLA6KJ1CLSEVrw__",
+                child: Image.asset(
+                  "assets/event_details_image.jpeg",
                   width: 362.sp,
                   height: 241.sp,
                   fit: BoxFit.cover,
@@ -139,26 +145,229 @@ class _EventDetailsState extends State<EventDetails> {
                       ],
                     ),
                     SizedBox(
+                      height: 14.sp,
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.sp),
+                        color: const Color(0xff171766),
+                      ),
+                      padding: EdgeInsets.only(
+                          left: 23.sp, right: 23.sp, top: 10.sp, bottom: 10.sp),
+                      child: Text(
+                        "Register Now",
+                        style: GoogleFonts.inter(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
                       height: 21.sp,
                     ),
                   ],
                 ),
               ),
               SizedBox(
-                height: 31.sp,
+                height: 25.sp,
               ),
               Text(
-                "Members Details",
-                style: GoogleFonts.poppins(
+                "Event Highlights:",
+                style: TextStyle(
+                  fontFamily: FontConstants.SfProMedium,
                   color: Colors.black,
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w500,
+                  fontSize: 20.sp,
                 ),
               ),
               SizedBox(
-                height: 16.sp,
+                height: 20.sp,
               ),
-              Container()
+              ...List.generate(
+                highlights.length,
+                (index) => Row(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.only(top: 10, right: 5),
+                      child: Icon(
+                        Icons.circle,
+                        size: 5,
+                      ),
+                    ),
+                    Expanded(
+                      child: Text(
+                        highlights[index],
+                        style: TextStyle(
+                          fontFamily: FontConstants.SfProRegular,
+                          color: Colors.black,
+                          fontSize: 16.sp,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 22.sp,
+              ),
+              Text(
+                "More Events",
+                style: TextStyle(
+                  fontFamily: FontConstants.SfProMedium,
+                  color: Colors.black,
+                  fontSize: 20.sp,
+                ),
+              ),
+              SizedBox(
+                height: 20.sp,
+              ),
+              ListView.separated(
+                itemCount: 2,
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                separatorBuilder: (context, index) => SizedBox(
+                  height: 10.sp,
+                ),
+                itemBuilder: (context, index) {
+                  return InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const EventDetails(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Palette.border1.withOpacity(0.2),
+                        ),
+                        color: Palette.containerBackground,
+                        borderRadius: BorderRadius.circular(20.85.sp),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            height: 10.sp,
+                          ),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: 10.sp,
+                              ),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(12.sp),
+                                child: Image.asset(
+                                  "assets/event_detail_image.png",
+                                  width: 120.sp,
+                                  height: 125.sp,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 10.sp,
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    width: 185.sp,
+                                    child: Text(
+                                      "Annual KMCC General Body Meeting",
+                                      maxLines: 2,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        overflow: TextOverflow.ellipsis,
+                                        fontSize: 14.sp,
+                                        fontFamily: FontConstants.SfProMedium,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 10.sp,
+                                  ),
+                                  Row(
+                                    children: [
+                                      SvgPicture.asset(
+                                        "assets/icons/calender_icon.svg",
+                                        width: 14.sp,
+                                        height: 14.sp,
+                                        colorFilter: const ColorFilter.mode(
+                                          Color(0xff4B5563),
+                                          BlendMode.srcIn,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 8.sp,
+                                      ),
+                                      Text(
+                                        "February 15, 2025",
+                                        style: TextStyle(
+                                          color: Palette.subtitle2
+                                              .withOpacity(0.6),
+                                          fontSize: 14.sp,
+                                          fontFamily:
+                                              FontConstants.SfProRegular,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: 11.sp,
+                                  ),
+                                  Row(
+                                    children: [
+                                      SvgPicture.asset(
+                                        Constants.timeIcon,
+                                        width: 14.sp,
+                                        height: 14.sp,
+                                        colorFilter: const ColorFilter.mode(
+                                          Color(0xff4B5563),
+                                          BlendMode.srcIn,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 8.sp,
+                                      ),
+                                      Text(
+                                        "8:00 AM - 8:00 PM",
+                                        style: TextStyle(
+                                          color: Palette.subtitle2
+                                              .withOpacity(0.6),
+                                          fontSize: 14.sp,
+                                          fontFamily:
+                                              FontConstants.SfProRegular,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 10.sp,
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
+              SizedBox(
+                height: 41.sp,
+              ),
+              Divider(
+                thickness: 1.sp,
+                color: const Color(0xffF0F0F0),
+              ),
+              SizedBox(
+                height: 20.sp,
+              ),
+              const SocialFooterWidget(),
             ],
           ),
         ),

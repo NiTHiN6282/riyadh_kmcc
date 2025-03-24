@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../../core/constants/constants.dart';
 import 'widgets/available_services_widget.dart';
-import 'widgets/career_opportunities_widget.dart';
+import '../../career/screens/career_opportunities_widget.dart';
 import 'widgets/constitution_committee_widget.dart';
 import 'widgets/home_banner_widget.dart';
 import 'widgets/join_gold_coin_program_widget.dart';

@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -8,6 +7,7 @@ import 'package:riyadh_kmcc_new/features/home/screens/widgets/social_footer_widg
 import '../../../core/constants/constants.dart';
 import '../../../core/constants/font_constants.dart';
 import '../../../theme/palette.dart';
+import 'event_details.dart';
 
 class EventScreen extends StatefulWidget {
   const EventScreen({super.key});
@@ -76,9 +76,7 @@ class _EventScreenState extends State<EventScreen> {
                 borderRadius: BorderRadius.circular(18.sp),
                 image: const DecorationImage(
                   fit: BoxFit.cover,
-                  image: CachedNetworkImageProvider(
-                    "https://s3-alpha-sig.figma.com/img/bc5f/6ec9/ccf1c6d9e8f3f8e5936f15e1831684bc?Expires=1742774400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=IFJd20oSJmbsARgPLAcg5SdCBOf2gYOcoqm4FPsihggOGsw6Pq48PJG7v2HYs0~INr6ScZY8BwR7CJZYZ2Nr~td48ORLz-6sV0MQ5CNQYVVS6mKBw2qlYDcuDux1fAkztyQydhBJCHB2u2Hi4Wz0yuNZlhQZNNF-1l3tyVJDfGZFQ4fnc48Oq2hYT32DDpACNf8e72FqUrdeLbSbKgKxriqoJx7oayePjwaFp6Ut81xhOfZzdqOJu8qU3D0NT3beGZvtSmGLj~0eEM4HswRwo8GYyVptMCTGD5CW4YD1AWyG5NxROMRsBLaYEHc5sNKkWNgqbh8ZUWavWJ7A-~4ayA__",
-                  ),
+                  image: AssetImage("assets/event_image.png"),
                 ),
               ),
               child: Stack(
@@ -250,116 +248,128 @@ class _EventScreenState extends State<EventScreen> {
                 height: 10.sp,
               ),
               itemBuilder: (context, index) {
-                return Container(
-                  margin: EdgeInsets.only(left: 12.sp, right: 12.sp),
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Palette.border1.withOpacity(0.2),
-                    ),
-                    color: Palette.containerBackground,
-                    borderRadius: BorderRadius.circular(20.85.sp),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        height: 10.sp,
+                return InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const EventDetails(),
                       ),
-                      Row(
-                        children: [
-                          SizedBox(
-                            width: 10.sp,
-                          ),
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(12.sp),
-                            child: Image.asset(
-                              Constants.availServices,
-                              width: 127.sp,
-                              height: 132.sp,
-                              fit: BoxFit.cover,
+                    );
+                  },
+                  child: Container(
+                    margin: EdgeInsets.only(left: 12.sp, right: 12.sp),
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Palette.border1.withOpacity(0.2),
+                      ),
+                      color: Palette.containerBackground,
+                      borderRadius: BorderRadius.circular(20.85.sp),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          height: 10.sp,
+                        ),
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: 10.sp,
                             ),
-                          ),
-                          SizedBox(
-                            width: 10.sp,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                width: 190.sp,
-                                child: Text(
-                                  "Enovo Plumbing Services",
-                                  maxLines: 2,
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    overflow: TextOverflow.ellipsis,
-                                    fontSize: 16.sp,
-                                    fontFamily: FontConstants.SfProMedium,
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(12.sp),
+                              child: Image.asset(
+                                "assets/event_detail_image.png",
+                                width: 120.sp,
+                                height: 125.sp,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 10.sp,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  width: 185.sp,
+                                  child: Text(
+                                    "Annual KMCC General Body Meeting",
+                                    maxLines: 2,
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      overflow: TextOverflow.ellipsis,
+                                      fontSize: 14.sp,
+                                      fontFamily: FontConstants.SfProMedium,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              SizedBox(
-                                height: 10.sp,
-                              ),
-                              Row(
-                                children: [
-                                  SvgPicture.asset(
-                                    "assets/icons/calender_icon.svg",
-                                    width: 14.sp,
-                                    height: 14.sp,
-                                    colorFilter: const ColorFilter.mode(
-                                      Color(0xff4B5563),
-                                      BlendMode.srcIn,
+                                SizedBox(
+                                  height: 10.sp,
+                                ),
+                                Row(
+                                  children: [
+                                    SvgPicture.asset(
+                                      "assets/icons/calender_icon.svg",
+                                      width: 14.sp,
+                                      height: 14.sp,
+                                      colorFilter: const ColorFilter.mode(
+                                        Color(0xff4B5563),
+                                        BlendMode.srcIn,
+                                      ),
                                     ),
-                                  ),
-                                  SizedBox(
-                                    width: 8.sp,
-                                  ),
-                                  Text(
-                                    "February 15, 2025",
-                                    style: TextStyle(
-                                      color: Palette.subtitle2.withOpacity(0.6),
-                                      fontSize: 14.sp,
-                                      fontFamily: FontConstants.SfProRegular,
+                                    SizedBox(
+                                      width: 8.sp,
                                     ),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(
-                                height: 11.sp,
-                              ),
-                              Row(
-                                children: [
-                                  SvgPicture.asset(
-                                    Constants.timeIcon,
-                                    width: 14.sp,
-                                    height: 14.sp,
-                                    colorFilter: const ColorFilter.mode(
-                                      Color(0xff4B5563),
-                                      BlendMode.srcIn,
+                                    Text(
+                                      "February 15, 2025",
+                                      style: TextStyle(
+                                        color:
+                                            Palette.subtitle2.withOpacity(0.6),
+                                        fontSize: 14.sp,
+                                        fontFamily: FontConstants.SfProRegular,
+                                      ),
                                     ),
-                                  ),
-                                  SizedBox(
-                                    width: 8.sp,
-                                  ),
-                                  Text(
-                                    "8:00 AM - 8:00 PM",
-                                    style: TextStyle(
-                                      color: Palette.subtitle2.withOpacity(0.6),
-                                      fontSize: 14.sp,
-                                      fontFamily: FontConstants.SfProRegular,
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 11.sp,
+                                ),
+                                Row(
+                                  children: [
+                                    SvgPicture.asset(
+                                      Constants.timeIcon,
+                                      width: 14.sp,
+                                      height: 14.sp,
+                                      colorFilter: const ColorFilter.mode(
+                                        Color(0xff4B5563),
+                                        BlendMode.srcIn,
+                                      ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 10.sp,
-                      ),
-                    ],
+                                    SizedBox(
+                                      width: 8.sp,
+                                    ),
+                                    Text(
+                                      "8:00 AM - 8:00 PM",
+                                      style: TextStyle(
+                                        color:
+                                            Palette.subtitle2.withOpacity(0.6),
+                                        fontSize: 14.sp,
+                                        fontFamily: FontConstants.SfProRegular,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10.sp,
+                        ),
+                      ],
+                    ),
                   ),
                 );
               },

@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -66,8 +65,8 @@ class OurExclusiveMembersWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20.sp),
                   image: const DecorationImage(
                     fit: BoxFit.cover,
-                    image: CachedNetworkImageProvider(
-                      "https://s3-alpha-sig.figma.com/img/4e4f/56fa/5e65d3cde005c8fd2c8c5bda20d639d5?Expires=1742774400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=SOgm7Rue7xcMePsgxF8TRD00Kohifm7Y1~TEBFI4HLKMzSk4np4qKwo8i90qzUDb3dRJ4BhtIcyRAc92AHvXkKEEUREej07J3Dwl4yQ1-gtDcvpEC6WOxick7qPhYKvn7nvU6BQci-ipGQSJkLvj0iWqFVM9to2ubbnfd0SaNeXxj2V4RuVhG~L238KK4G5IuusKo-6i3ZFvKbZFnYpFEksNCOO80oogN~9kitbhZT8WH3tmYx83-f9xmFQbT4wHVA-EAHUmys3q8eQCn-1jc~hAyaaIxP7d8~35XopQey2SKIrruxxoxk~S5OZWI80O~cYJuuNnDi2ugPIP~0BElQ__",
+                    image: AssetImage(
+                      "assets/kmcc_member.jpeg",
                     ),
                   ),
                 ),
