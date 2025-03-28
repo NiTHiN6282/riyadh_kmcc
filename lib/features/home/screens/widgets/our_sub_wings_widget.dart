@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../core/constants/font_constants.dart';
+import '../../../subwing/screens/subwing_details.dart';
 
 class OurSubWingsWidget extends StatelessWidget {
   const OurSubWingsWidget({
@@ -84,7 +85,14 @@ class OurSubWingsWidget extends StatelessWidget {
                     ),
                     const Spacer(),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SubWingsDetails(),
+                          ),
+                        );
+                      },
                       child: Container(
                           width: 55.sp,
                           height: 22.sp,

@@ -3,8 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../core/constants/constants.dart';
-import 'widgets/available_services_widget.dart';
 import '../../career/screens/career_opportunities_widget.dart';
+import '../../notification/screens/notification_screen.dart';
+import 'widgets/available_services_widget.dart';
 import 'widgets/constitution_committee_widget.dart';
 import 'widgets/home_banner_widget.dart';
 import 'widgets/join_gold_coin_program_widget.dart';
@@ -45,7 +46,13 @@ class _HomeScreenState extends State<HomeScreen> {
           Padding(
             padding: const EdgeInsets.only(right: 20),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const NotificationsScreen(),
+                    ));
+              },
               child: SvgPicture.asset(Constants.bellIcon),
             ),
           )

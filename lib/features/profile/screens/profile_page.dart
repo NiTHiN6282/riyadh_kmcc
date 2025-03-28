@@ -5,6 +5,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:riyadh_kmcc_new/core/constants/font_constants.dart';
 
 import '../../../core/constants/constants.dart';
+import '../../events/screens/attended_events.dart';
+import '../../notification/screens/notification_screen.dart';
+import '../../travel/screens/add_travel_log.dart';
+import 'personal_details.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -38,7 +42,13 @@ class _ProfilePageState extends State<ProfilePage> {
           Padding(
             padding: const EdgeInsets.only(right: 20),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const NotificationsScreen(),
+                    ));
+              },
               child: SvgPicture.asset(Constants.bellIcon),
             ),
           )
@@ -57,11 +67,25 @@ class _ProfilePageState extends State<ProfilePage> {
                 TileWidget(
                   icon: "assets/profile/attended_events.svg",
                   text: "Attended Events",
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const AttendedEvents(),
+                        ));
+                  },
                 ),
                 TileWidget(
                   icon: "assets/profile/new_travel_entry.svg",
                   isBorderEnabled: false,
                   text: "New Travel Entry",
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const AddTravelLog(),
+                        ));
+                  },
                 ),
               ],
             ),
@@ -125,6 +149,13 @@ class _ProfilePageState extends State<ProfilePage> {
                 TileWidget(
                   icon: "assets/profile/personal_details.svg",
                   text: "Personal Details",
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const PersonalDetails(),
+                        ));
+                  },
                 ),
                 TileWidget(
                   icon: "assets/profile/notifications.svg",
@@ -221,6 +252,7 @@ class TileWidget extends StatefulWidget {
   String text;
   bool isSwitch;
   bool notification;
+  GestureTapCallback? onTap;
   TileWidget({
     super.key,
     this.isBorderEnabled = true,
@@ -228,6 +260,7 @@ class TileWidget extends StatefulWidget {
     required this.text,
     this.isSwitch = false,
     this.notification = false,
+    this.onTap,
   });
 
   @override
@@ -237,69 +270,72 @@ class TileWidget extends StatefulWidget {
 class _TileWidgetState extends State<TileWidget> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          height: 8.sp,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                SizedBox(
-                  width: 15.31.sp,
-                ),
-                SvgPicture.asset(widget.icon),
-                SizedBox(
-                  width: 8.sp,
-                ),
-                Text(
-                  widget.text,
-                  style: TextStyle(
-                    fontFamily: FontConstants.SfProRegular,
-                    fontSize: 16.sp,
-                    color: Colors.black,
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                if (!widget.isSwitch)
-                  Icon(
-                    Icons.arrow_forward_ios,
-                    size: 15.sp,
-                  ),
-                if (widget.isSwitch)
-                  Switch(
-                    value: widget.notification,
-                    activeColor: Colors.black,
-                    thumbColor: const MaterialStatePropertyAll(Colors.white),
-                    activeTrackColor: Colors.black,
-                    onChanged: (value) {
-                      widget.notification = value;
-                      setState(() {});
-                    },
-                  ),
-                SizedBox(
-                  width: 33.81.sp,
-                ),
-              ],
-            ),
-          ],
-        ),
-        SizedBox(
-          height: 13.sp,
-        ),
-        if (widget.isBorderEnabled)
-          Divider(
-            thickness: 1.sp,
-            color: const Color(0xffF0F0F0),
+    return InkWell(
+      onTap: widget.onTap,
+      child: Column(
+        children: [
+          SizedBox(
+            height: 8.sp,
           ),
-      ],
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SizedBox(
+                    width: 15.31.sp,
+                  ),
+                  SvgPicture.asset(widget.icon),
+                  SizedBox(
+                    width: 8.sp,
+                  ),
+                  Text(
+                    widget.text,
+                    style: TextStyle(
+                      fontFamily: FontConstants.SfProRegular,
+                      fontSize: 16.sp,
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if (!widget.isSwitch)
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      size: 15.sp,
+                    ),
+                  if (widget.isSwitch)
+                    Switch(
+                      value: widget.notification,
+                      activeColor: Colors.black,
+                      thumbColor: const MaterialStatePropertyAll(Colors.white),
+                      activeTrackColor: Colors.black,
+                      onChanged: (value) {
+                        widget.notification = value;
+                        setState(() {});
+                      },
+                    ),
+                  SizedBox(
+                    width: 33.81.sp,
+                  ),
+                ],
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 13.sp,
+          ),
+          if (widget.isBorderEnabled)
+            Divider(
+              thickness: 1.sp,
+              color: const Color(0xffF0F0F0),
+            ),
+        ],
+      ),
     );
   }
 }

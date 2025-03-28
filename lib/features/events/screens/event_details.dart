@@ -7,6 +7,7 @@ import 'package:riyadh_kmcc_new/features/home/screens/widgets/social_footer_widg
 
 import '../../../core/constants/constants.dart';
 import '../../../theme/palette.dart';
+import 'event_registration.dart';
 
 class EventDetails extends StatefulWidget {
   const EventDetails({super.key});
@@ -147,18 +148,31 @@ class _EventDetailsState extends State<EventDetails> {
                     SizedBox(
                       height: 14.sp,
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10.sp),
-                        color: const Color(0xff171766),
-                      ),
-                      padding: EdgeInsets.only(
-                          left: 23.sp, right: 23.sp, top: 10.sp, bottom: 10.sp),
-                      child: Text(
-                        "Register Now",
-                        style: GoogleFonts.inter(
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w500,
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const EventRegistration(),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10.sp),
+                          color: const Color(0xff171766),
+                        ),
+                        padding: EdgeInsets.only(
+                            left: 23.sp,
+                            right: 23.sp,
+                            top: 10.sp,
+                            bottom: 10.sp),
+                        child: Text(
+                          "Register Now",
+                          style: GoogleFonts.inter(
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       ),
                     ),

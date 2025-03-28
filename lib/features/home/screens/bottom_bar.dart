@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
+import '../../auth/screens/forgot_password.dart';
 import '../../events/screens/events_screen.dart';
 import '../../news/screens/news.dart';
 import '../../profile/screens/profile_page.dart';
@@ -278,7 +279,13 @@ class _BottomBarState extends ConsumerState<BottomBar>
                       Align(
                         alignment: Alignment.centerRight,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const ForgotPassword(),
+                                ));
+                          },
                           child: Text(
                             "Forgot Password?",
                             style: GoogleFonts.poppins(

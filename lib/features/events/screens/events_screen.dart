@@ -7,7 +7,9 @@ import 'package:riyadh_kmcc_new/features/home/screens/widgets/social_footer_widg
 import '../../../core/constants/constants.dart';
 import '../../../core/constants/font_constants.dart';
 import '../../../theme/palette.dart';
+import '../../notification/screens/notification_screen.dart';
 import 'event_details.dart';
+import 'event_registration.dart';
 
 class EventScreen extends StatefulWidget {
   const EventScreen({super.key});
@@ -57,7 +59,13 @@ class _EventScreenState extends State<EventScreen> {
           Padding(
             padding: const EdgeInsets.only(right: 20),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const NotificationsScreen(),
+                    ));
+              },
               child: SvgPicture.asset(Constants.bellIcon),
             ),
           )
@@ -166,19 +174,29 @@ class _EventScreenState extends State<EventScreen> {
                         SizedBox(
                           height: 15.48.sp,
                         ),
-                        Container(
-                          width: 149.sp,
-                          height: 39.sp,
-                          decoration: BoxDecoration(
-                            color: const Color(0xff171766),
-                            borderRadius: BorderRadius.circular(10.sp),
-                          ),
-                          child: Center(
-                            child: Text(
-                              "Register Now",
-                              style: GoogleFonts.inter(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 16.sp,
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const EventRegistration(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            width: 149.sp,
+                            height: 39.sp,
+                            decoration: BoxDecoration(
+                              color: const Color(0xff171766),
+                              borderRadius: BorderRadius.circular(10.sp),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "Register Now",
+                                style: GoogleFonts.inter(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 16.sp,
+                                ),
                               ),
                             ),
                           ),

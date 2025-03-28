@@ -1,4 +1,3 @@
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,12 +6,12 @@ import 'features/home/screens/bottom_bar.dart';
 
 void main() {
   runApp(
-    // const ProviderScope(
-    //   child: MainApp(),
-    // ),
-    DevicePreview(builder: (context) {
-      return const ProviderScope(child: MainApp());
-    }),
+    const ProviderScope(
+      child: MainApp(),
+    ),
+    // DevicePreview(builder: (context) {
+    //   return const ProviderScope(child: MainApp());
+    // }),
   );
 }
 

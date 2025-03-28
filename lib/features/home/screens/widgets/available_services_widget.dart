@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../core/constants/constants.dart';
 import '../../../../core/constants/font_constants.dart';
@@ -192,24 +193,33 @@ class AvailableServicesWidget extends StatelessWidget {
                   SizedBox(
                     height: 10.sp,
                   ),
-                  Container(
-                    // width: 330.sp,
-                    height: 42.sp,
-                    margin: EdgeInsets.only(
-                      left: 20.sp,
-                      right: 20.sp,
-                    ),
-                    decoration: BoxDecoration(
-                      color: Palette.border1,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "Book Now",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16.sp,
-                          fontFamily: FontConstants.SfProBold,
+                  InkWell(
+                    onTap: () async {
+                      final Uri launchUri = Uri(
+                        scheme: 'tel',
+                        path: "6282329387",
+                      );
+                      await launchUrl(launchUri);
+                    },
+                    child: Container(
+                      // width: 330.sp,
+                      height: 42.sp,
+                      margin: EdgeInsets.only(
+                        left: 20.sp,
+                        right: 20.sp,
+                      ),
+                      decoration: BoxDecoration(
+                        color: Palette.border1,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Book Now",
+                          style: GoogleFonts.poppins(
+                            color: Colors.white,
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
                     ),

@@ -6,6 +6,7 @@ import 'package:riyadh_kmcc_new/features/career/screens/career_opportunities_lis
 import '../../../core/constants/constants.dart';
 import '../../../core/constants/font_constants.dart';
 import '../../../theme/palette.dart';
+import 'career_details.dart';
 
 class CareerOpportunitiesWidget extends StatelessWidget {
   const CareerOpportunitiesWidget({
@@ -57,79 +58,88 @@ class CareerOpportunitiesWidget extends StatelessWidget {
             height: 10.sp,
           ),
           itemBuilder: (context, index) {
-            return Container(
-              height: 170.sp,
-              padding: EdgeInsets.only(left: 20.sp, top: 15.sp, bottom: 15.sp),
-              margin: EdgeInsets.only(left: 27.sp, right: 27.sp),
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Palette.border1.withOpacity(0.2),
+            return InkWell(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const CareerDetails(),
                 ),
-                color: Palette.containerBackground,
-                borderRadius: BorderRadius.circular(20.85.sp),
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Image.asset(
-                    Constants.companyLogo,
-                    width: 70.sp,
-                    height: 38.5.sp,
-                    fit: BoxFit.cover,
+              child: Container(
+                height: 170.sp,
+                padding:
+                    EdgeInsets.only(left: 20.sp, top: 15.sp, bottom: 15.sp),
+                margin: EdgeInsets.only(left: 27.sp, right: 27.sp),
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Palette.border1.withOpacity(0.2),
                   ),
-                  SizedBox(
-                    height: 10.sp,
-                  ),
-                  Text(
-                    "BAPCO Bahrain",
-                    style: TextStyle(
-                      color: Palette.subtitle3,
-                      overflow: TextOverflow.ellipsis,
-                      fontSize: 12.sp,
-                      fontFamily: FontConstants.SfProMedium,
+                  color: Palette.containerBackground,
+                  borderRadius: BorderRadius.circular(20.85.sp),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Image.asset(
+                      Constants.companyLogo,
+                      width: 70.sp,
+                      height: 38.5.sp,
+                      fit: BoxFit.cover,
                     ),
-                  ),
-                  SizedBox(
-                    height: 17.sp,
-                  ),
-                  Text(
-                    "Front-end Developer / Full time",
-                    style: TextStyle(
-                      color: Palette.heading3,
-                      overflow: TextOverflow.ellipsis,
-                      fontSize: 18.sp,
-                      fontFamily: FontConstants.SfProMedium,
+                    SizedBox(
+                      height: 10.sp,
                     ),
-                  ),
-                  SizedBox(
-                    height: 16.sp,
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        "BHD 2500/ M",
-                        style: TextStyle(
-                          color: Palette.heading3,
-                          overflow: TextOverflow.ellipsis,
-                          fontSize: 14.sp,
-                          fontFamily: FontConstants.SfProRegular,
+                    Text(
+                      "BAPCO Bahrain",
+                      style: TextStyle(
+                        color: Palette.subtitle3,
+                        overflow: TextOverflow.ellipsis,
+                        fontSize: 12.sp,
+                        fontFamily: FontConstants.SfProMedium,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 17.sp,
+                    ),
+                    Text(
+                      "Front-end Developer / Full time",
+                      style: TextStyle(
+                        color: Palette.heading3,
+                        overflow: TextOverflow.ellipsis,
+                        fontSize: 18.sp,
+                        fontFamily: FontConstants.SfProMedium,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 16.sp,
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          "BHD 2500/ M",
+                          style: TextStyle(
+                            color: Palette.heading3,
+                            overflow: TextOverflow.ellipsis,
+                            fontSize: 14.sp,
+                            fontFamily: FontConstants.SfProRegular,
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                        width: 11.sp,
-                      ),
-                      Text(
-                        "Hamad Town, Bahrain",
-                        style: TextStyle(
-                          color: Palette.subtitle3,
-                          overflow: TextOverflow.ellipsis,
-                          fontSize: 12.sp,
-                          fontFamily: FontConstants.SfProRegular,
+                        SizedBox(
+                          width: 11.sp,
                         ),
-                      ),
-                    ],
-                  ),
-                ],
+                        Text(
+                          "Hamad Town, Bahrain",
+                          style: TextStyle(
+                            color: Palette.subtitle3,
+                            overflow: TextOverflow.ellipsis,
+                            fontSize: 12.sp,
+                            fontFamily: FontConstants.SfProRegular,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             );
           },

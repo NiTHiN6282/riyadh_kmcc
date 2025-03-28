@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../core/constants/font_constants.dart';
 import '../../../theme/palette.dart';
 import '../../home/screens/widgets/social_footer_widget.dart';
+import 'add_travel_log.dart';
 
 class TravelLog extends StatefulWidget {
   const TravelLog({super.key});
@@ -44,16 +45,25 @@ class TravelLogState extends State<TravelLog> {
           ),
         ),
         actions: [
-          Container(
-            width: 38.sp,
-            height: 38.sp,
-            margin: EdgeInsets.only(right: 21.sp),
-            decoration: BoxDecoration(
-              color: const Color(0xffEDEDED),
-              borderRadius: BorderRadius.circular(30),
-            ),
-            child: const Icon(
-              Icons.add,
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const AddTravelLog(),
+                  ));
+            },
+            child: Container(
+              width: 38.sp,
+              height: 38.sp,
+              margin: EdgeInsets.only(right: 21.sp),
+              decoration: BoxDecoration(
+                color: const Color(0xffEDEDED),
+                borderRadius: BorderRadius.circular(30),
+              ),
+              child: const Icon(
+                Icons.add,
+              ),
             ),
           ),
         ],
