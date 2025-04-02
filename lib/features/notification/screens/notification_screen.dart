@@ -191,9 +191,9 @@ class _NotificationsScreenState extends State<NotificationsScreen>
           ),
           onPressed: () {},
           child: Text("Mark All as Read",
-              style: GoogleFonts.dmSans(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
+              style: GoogleFonts.inter(
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w500,
                   color: Colors.white)),
         ),
       ),

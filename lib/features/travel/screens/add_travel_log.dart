@@ -73,6 +73,8 @@ class _AddTravelLogState extends State<AddTravelLog> {
                   ),
                   decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(left: 12.sp),
+                    filled: true,
+                    fillColor: Colors.white,
                     hintText: "Enter your full name.",
                     hintStyle: GoogleFonts.poppins(
                       fontSize: 14.sp,
@@ -122,6 +124,8 @@ class _AddTravelLogState extends State<AddTravelLog> {
                             color: const Color(0xff4A4A4A).withOpacity(0.6),
                           ),
                           decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Colors.white,
                             contentPadding: EdgeInsets.only(left: 12.sp),
                             hintText: "MB1729N7SH2",
                             hintStyle: GoogleFonts.poppins(
@@ -183,11 +187,11 @@ class _AddTravelLogState extends State<AddTravelLog> {
                           child: Container(
                             height: 48.sp,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.all(
-                                color: const Color(0xffB4B4B4),
-                              ),
-                            ),
+                                borderRadius: BorderRadius.circular(10),
+                                border: Border.all(
+                                  color: const Color(0xffB4B4B4),
+                                ),
+                                color: Colors.white),
                             child: Center(
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
@@ -246,6 +250,8 @@ class _AddTravelLogState extends State<AddTravelLog> {
                             decoration: InputDecoration(
                               contentPadding: EdgeInsets.only(left: 12.sp),
                               hintText: "+966 653 2253 82",
+                              filled: true,
+                              fillColor: Colors.white,
                               hintStyle: GoogleFonts.poppins(
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w400,

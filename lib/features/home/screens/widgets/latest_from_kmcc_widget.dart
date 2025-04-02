@@ -65,7 +65,8 @@ class _LatestFromKmccWidgetState extends ConsumerState<LatestFromKmccWidget> {
                 ));
           },
           child: Container(
-            height: 180.sp,
+            height: 210.sp,
+            // width: 358.sp,
             margin: EdgeInsets.only(
               left: 22.sp,
               right: 22.sp,

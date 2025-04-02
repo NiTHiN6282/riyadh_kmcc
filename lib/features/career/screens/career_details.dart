@@ -310,7 +310,7 @@ class _CareerDetailsState extends State<CareerDetails> {
                                   SvgPicture.asset("assets/icons/key_res.svg"),
                             ),
                             SizedBox(
-                              width: 4.sp,
+                              width: 15.sp,
                             ),
                             Expanded(
                               child: Text(
@@ -374,7 +374,7 @@ class _CareerDetailsState extends State<CareerDetails> {
                                   "assets/icons/green_tick.svg"),
                             ),
                             SizedBox(
-                              width: 4.sp,
+                              width: 12.sp,
                             ),
                             Expanded(
                               child: Text(
@@ -476,7 +476,7 @@ class _CareerDetailsState extends State<CareerDetails> {
                 ),
               ),
               SizedBox(
-                height: 80.sp,
+                height: 90.sp,
               ),
             ],
           ),
@@ -486,7 +486,7 @@ class _CareerDetailsState extends State<CareerDetails> {
         decoration: const BoxDecoration(
           color: Colors.white,
         ),
-        padding: EdgeInsets.only(left: 20.sp, top: 10.sp),
+        padding: EdgeInsets.only(left: 20.sp, top: 10.sp, bottom: 10.sp),
         child: Row(
           children: [
             Column(

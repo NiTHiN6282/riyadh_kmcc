@@ -40,6 +40,7 @@ class _EventScreenState extends State<EventScreen> {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.white,
@@ -216,43 +217,57 @@ class _EventScreenState extends State<EventScreen> {
             Container(
               height: 42.sp,
               padding: EdgeInsets.only(left: 20.sp),
-              child: ListView.separated(
-                itemCount: eventCategories.length,
+              child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                separatorBuilder: (context, index) => SizedBox(
-                  width: 12.sp,
-                ),
-                itemBuilder: (context, index) {
-                  var category = eventCategories[index];
-                  return InkWell(
-                    onTap: () {
-                      selectedCategory = category;
-                      setState(() {});
-                    },
-                    child: Container(
-                      width: 123.sp,
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                            color: const Color(0xffE5E7EB),
-                          ),
-                          borderRadius: BorderRadius.circular(20),
-                          color: selectedCategory == category
-                              ? const Color(0xff7452FF)
-                              : Colors.white),
-                      child: Center(
-                        child: Text(
-                          eventCategories[index],
-                          style: GoogleFonts.poppins(
-                            color: selectedCategory == category
-                                ? Colors.white
-                                : const Color(0xff4B5563),
-                            fontSize: 13.sp,
-                          ),
+                child: Row(
+                  children: [
+                    SizedBox(
+                      height: 42.sp,
+                      child: ListView.separated(
+                        itemCount: eventCategories.length,
+                        scrollDirection: Axis.horizontal,
+                        shrinkWrap: true,
+                        separatorBuilder: (context, index) => SizedBox(
+                          width: 12.sp,
                         ),
+                        itemBuilder: (context, index) {
+                          var category = eventCategories[index];
+                          return InkWell(
+                            onTap: () {
+                              selectedCategory = category;
+                              setState(() {});
+                            },
+                            child: Container(
+                              width: 123.sp,
+                              decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: const Color(0xffE5E7EB),
+                                  ),
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: selectedCategory == category
+                                      ? const Color(0xff7452FF)
+                                      : Colors.white),
+                              child: Center(
+                                child: Text(
+                                  eventCategories[index],
+                                  style: GoogleFonts.poppins(
+                                    color: selectedCategory == category
+                                        ? Colors.white
+                                        : const Color(0xff4B5563),
+                                    fontSize: 13.sp,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          );
+                        },
                       ),
                     ),
-                  );
-                },
+                    SizedBox(
+                      width: 20.sp,
+                    )
+                  ],
+                ),
               ),
             ),
             SizedBox(
@@ -279,9 +294,9 @@ class _EventScreenState extends State<EventScreen> {
                     margin: EdgeInsets.only(left: 12.sp, right: 12.sp),
                     decoration: BoxDecoration(
                       border: Border.all(
-                        color: Palette.border1.withOpacity(0.2),
+                        color: const Color(0xffEBEBEB),
                       ),
-                      color: Palette.containerBackground,
+                      color: Colors.white,
                       borderRadius: BorderRadius.circular(20.85.sp),
                     ),
                     child: Column(

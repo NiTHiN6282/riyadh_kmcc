@@ -113,9 +113,9 @@ class _AttendedEventsState extends State<AttendedEvents> {
                     child: Container(
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: Palette.border1.withOpacity(0.2),
+                          color: const Color(0xffEBEBEB),
                         ),
-                        color: Palette.containerBackground,
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(20.85.sp),
                       ),
                       child: Column(

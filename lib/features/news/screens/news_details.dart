@@ -55,6 +55,29 @@ class _NewsDetailsState extends State<NewsDetails> {
                   fit: BoxFit.cover,
                 ),
                 Positioned(
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  child: Container(
+                    height: 170.sp,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(18.sp),
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          // Colors.transparent,
+                          const Color(0xff111111).withOpacity(0.05),
+                          const Color(0xff080808).withOpacity(0.4),
+                          const Color(0xff0E0E0E).withOpacity(0.5),
+                          // const Color(0xff000000),
+                          // const Color(0xff111111),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Positioned(
                   top: 184.sp,
                   left: 0, // Ensure it starts from the left edge
                   right: 0, // Ensure it spans the full width
@@ -161,7 +184,7 @@ class _NewsDetailsState extends State<NewsDetails> {
               ],
             ),
             SizedBox(
-              height: 40.sp,
+              height: 30.sp,
             ),
             Container(
               color: Colors.white,
@@ -169,7 +192,8 @@ class _NewsDetailsState extends State<NewsDetails> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: EdgeInsets.all(20.0.sp),
+                    padding: EdgeInsets.only(
+                        top: 20.0.sp, left: 20.sp, right: 20.sp, bottom: 48.sp),
                     child: Text(
                       '''The Kerala Muslim Cultural Centre (KMCC) recently hosted its highly anticipated Annual Gala, bringing together over 500 members from across the community. The event, which took place at a luxurious venue in the heart of the city, provided a vibrant atmosphere filled with excitement, celebration, and a shared sense of unity. Members were treated to a night of cultural performances, delectable cuisine, and insightful speeches that reflected the organization’s deep-rooted commitment to community empowerment, education, and cultural preservation. The gala marked a significant milestone for KMCC as it continues to grow as a pillar of support for its members, both locally and internationally.
 
@@ -288,7 +312,8 @@ The evening featured a series of engaging speeches by key figures within KMCC, i
                                               style: GoogleFonts.poppins(
                                                 fontSize: 12.sp,
                                                 fontWeight: FontWeight.w400,
-                                                color: const Color(0xff4a4a4a),
+                                                color: const Color(0xff4a4a4a)
+                                                    .withOpacity(0.6),
                                               ),
                                             ),
                                           ),
@@ -298,8 +323,12 @@ The evening featured a series of engaging speeches by key figures within KMCC, i
                                           Container(
                                             width: 3.sp,
                                             height: 3.sp,
-                                            color: const Color(0xff4A4A4A)
-                                                .withOpacity(0.8),
+                                            decoration: BoxDecoration(
+                                              color: const Color(0xff4A4A4A)
+                                                  .withOpacity(0.8),
+                                              borderRadius:
+                                                  BorderRadius.circular(20.sp),
+                                            ),
                                           ),
                                           SizedBox(
                                             width: 5.sp,
@@ -309,7 +338,8 @@ The evening featured a series of engaging speeches by key figures within KMCC, i
                                             style: GoogleFonts.poppins(
                                               fontSize: 12.sp,
                                               fontWeight: FontWeight.w400,
-                                              color: const Color(0xff4a4a4a),
+                                              color: const Color(0xff4a4a4a)
+                                                  .withOpacity(0.6),
                                             ),
                                           ),
                                         ],
@@ -321,13 +351,21 @@ The evening featured a series of engaging speeches by key figures within KMCC, i
                               SizedBox(
                                 height: 15.sp,
                               ),
-                              SizedBox(
-                                width: 342.5.sp,
-                                child: Divider(
-                                  thickness: 1.sp,
-                                  color: const Color(0xffF0F0F0),
+                              if (index != 3)
+                                Column(
+                                  children: [
+                                    SizedBox(
+                                      width: 342.5.sp,
+                                      child: Divider(
+                                        thickness: 1.sp,
+                                        color: const Color(0xffF0F0F0),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 15.sp,
+                                    ),
+                                  ],
                                 ),
-                              ),
                             ],
                           ),
                         ),

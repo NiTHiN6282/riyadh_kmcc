@@ -182,6 +182,9 @@ class TravelLogState extends State<TravelLog> {
                       ],
                     ),
                   ),
+                  SizedBox(
+                    width: 20.sp,
+                  ),
                 ],
               ),
             ),

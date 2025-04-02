@@ -59,7 +59,7 @@ class _EventDetailsState extends State<EventDetails> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.circular(12.sp),
+                borderRadius: BorderRadius.circular(18.sp),
                 child: Image.asset(
                   "assets/event_details_image.jpeg",
                   width: 362.sp,
@@ -198,28 +198,31 @@ class _EventDetailsState extends State<EventDetails> {
               ),
               ...List.generate(
                 highlights.length,
-                (index) => Row(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Padding(
-                      padding: EdgeInsets.only(top: 10, right: 5),
-                      child: Icon(
-                        Icons.circle,
-                        size: 5,
-                      ),
-                    ),
-                    Expanded(
-                      child: Text(
-                        highlights[index],
-                        style: TextStyle(
-                          fontFamily: FontConstants.SfProRegular,
-                          color: Colors.black,
-                          fontSize: 16.sp,
+                (index) => Padding(
+                  padding: EdgeInsets.only(bottom: 15.sp),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.only(top: 10, right: 5),
+                        child: Icon(
+                          Icons.circle,
+                          size: 5,
                         ),
                       ),
-                    ),
-                  ],
+                      Expanded(
+                        child: Text(
+                          highlights[index],
+                          style: TextStyle(
+                            fontFamily: FontConstants.SfProRegular,
+                            color: Colors.black,
+                            fontSize: 16.sp,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               SizedBox(
@@ -256,9 +259,9 @@ class _EventDetailsState extends State<EventDetails> {
                     child: Container(
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: Palette.border1.withOpacity(0.2),
+                          color: const Color(0xffEBEBEB),
                         ),
-                        color: Palette.containerBackground,
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(20.85.sp),
                       ),
                       child: Column(

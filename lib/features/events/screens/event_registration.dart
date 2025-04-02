@@ -18,7 +18,7 @@ class _EventRegistrationState extends State<EventRegistration> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffEDEDED),
+      backgroundColor: const Color(0xffF7F7F7),
       appBar: AppBar(
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.white,
@@ -71,6 +71,8 @@ class _EventRegistrationState extends State<EventRegistration> {
                     color: const Color(0xff4A4A4A).withOpacity(0.6),
                   ),
                   decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
                     contentPadding: EdgeInsets.only(left: 12.sp),
                     hintText: "Enter your full name.",
                     hintStyle: GoogleFonts.poppins(
@@ -124,6 +126,8 @@ class _EventRegistrationState extends State<EventRegistration> {
                   ),
                   decoration: InputDecoration(
                     hintText: "MB1729N7SH2",
+                    filled: true,
+                    fillColor: Colors.white,
                     contentPadding: EdgeInsets.only(left: 12.sp),
                     hintStyle: GoogleFonts.poppins(
                       fontSize: 14.sp,
@@ -169,6 +173,7 @@ class _EventRegistrationState extends State<EventRegistration> {
               Container(
                 padding: EdgeInsets.all(2.sp),
                 decoration: BoxDecoration(
+                  color: Colors.white,
                   border: Border.all(
                     color: const Color(0xffB4B4B4),
                   ),
@@ -182,7 +187,11 @@ class _EventRegistrationState extends State<EventRegistration> {
                   },
                   dropdownIcon: const Icon(Icons.keyboard_arrow_down_sharp),
                   dropdownIconPosition: IconPosition.trailing,
-                  decoration: const InputDecoration(border: InputBorder.none),
+                  decoration: const InputDecoration(
+                    border: InputBorder.none,
+                    filled: true,
+                    fillColor: Colors.white,
+                  ),
                   style: GoogleFonts.poppins(
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400,

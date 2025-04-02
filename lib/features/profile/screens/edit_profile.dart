@@ -97,6 +97,8 @@ class _EditProfileState extends State<EditProfile> {
                 ),
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.only(left: 12.sp),
+                  fillColor: Colors.white,
+                  filled: true,
                   hintText: "Enter your name",
                   prefixIcon: Padding(
                     padding: const EdgeInsets.all(12),
@@ -110,11 +112,11 @@ class _EditProfileState extends State<EditProfile> {
                     color: const Color(0xff4A4A4A).withOpacity(0.6),
                   ),
                   enabledBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xffB4B4B4)),
+                    borderSide: BorderSide(color: Color(0xffE7E7E7)),
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
                   focusedBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xffB4B4B4)),
+                    borderSide: BorderSide(color: Color(0xffE7E7E7)),
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
                   border: OutlineInputBorder(
@@ -139,8 +141,9 @@ class _EditProfileState extends State<EditProfile> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(
-                      color: const Color(0xffB4B4B4),
+                      color: const Color(0xffE7E7E7),
                     ),
+                    color: Colors.white,
                   ),
                   padding: EdgeInsets.only(top: 16.sp, bottom: 16.sp),
                   child: Row(
@@ -184,6 +187,8 @@ class _EditProfileState extends State<EditProfile> {
                 ),
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.only(left: 12.sp),
+                  fillColor: Colors.white,
+                  filled: true,
                   hintText: "Enter your email",
                   prefixIcon: Padding(
                     padding: const EdgeInsets.all(12),
@@ -197,11 +202,11 @@ class _EditProfileState extends State<EditProfile> {
                     color: const Color(0xff4A4A4A).withOpacity(0.6),
                   ),
                   enabledBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xffB4B4B4)),
+                    borderSide: BorderSide(color: Color(0xffE7E7E7)),
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
                   focusedBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xffB4B4B4)),
+                    borderSide: BorderSide(color: Color(0xffE7E7E7)),
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
                   border: OutlineInputBorder(
@@ -216,8 +221,9 @@ class _EditProfileState extends State<EditProfile> {
                 padding: EdgeInsets.all(2.sp),
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: const Color(0xffB4B4B4),
+                    color: const Color(0xffE7E7E7),
                   ),
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(10.sp),
                 ),
                 child: IntlPhoneField(
@@ -228,7 +234,11 @@ class _EditProfileState extends State<EditProfile> {
                   },
                   dropdownIcon: const Icon(Icons.keyboard_arrow_down_sharp),
                   dropdownIconPosition: IconPosition.trailing,
-                  decoration: const InputDecoration(border: InputBorder.none),
+                  decoration: const InputDecoration(
+                    border: InputBorder.none,
+                    fillColor: Colors.white,
+                    filled: true,
+                  ),
                   style: GoogleFonts.poppins(
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
@@ -252,6 +262,8 @@ class _EditProfileState extends State<EditProfile> {
                 ),
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.only(left: 12.sp),
+                  fillColor: Colors.white,
+                  filled: true,
                   hintText: "Enter your Occupation",
                   prefixIcon: Padding(
                     padding: const EdgeInsets.all(12),
@@ -265,11 +277,11 @@ class _EditProfileState extends State<EditProfile> {
                     color: const Color(0xff4A4A4A).withOpacity(0.6),
                   ),
                   enabledBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xffB4B4B4)),
+                    borderSide: BorderSide(color: Color(0xffE7E7E7)),
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
                   focusedBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xffB4B4B4)),
+                    borderSide: BorderSide(color: Color(0xffE7E7E7)),
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
                   border: OutlineInputBorder(
@@ -288,6 +300,8 @@ class _EditProfileState extends State<EditProfile> {
                 ),
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.only(left: 12.sp),
+                  fillColor: Colors.white,
+                  filled: true,
                   hintText: "Enter your Employer",
                   prefixIcon: Padding(
                     padding: const EdgeInsets.all(12),
@@ -301,11 +315,11 @@ class _EditProfileState extends State<EditProfile> {
                     color: const Color(0xff4A4A4A).withOpacity(0.6),
                   ),
                   enabledBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xffB4B4B4)),
+                    borderSide: BorderSide(color: Color(0xffE7E7E7)),
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
                   focusedBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xffB4B4B4)),
+                    borderSide: BorderSide(color: Color(0xffE7E7E7)),
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
                   border: OutlineInputBorder(
@@ -324,6 +338,8 @@ class _EditProfileState extends State<EditProfile> {
                 ),
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.only(left: 12.sp),
+                  fillColor: Colors.white,
+                  filled: true,
                   hintText: "Enter your place",
                   prefixIcon: Padding(
                     padding: const EdgeInsets.all(12),
@@ -337,11 +353,11 @@ class _EditProfileState extends State<EditProfile> {
                     color: const Color(0xff4A4A4A).withOpacity(0.6),
                   ),
                   enabledBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xffB4B4B4)),
+                    borderSide: BorderSide(color: Color(0xffE7E7E7)),
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
                   focusedBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xffB4B4B4)),
+                    borderSide: BorderSide(color: Color(0xffE7E7E7)),
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
                   border: OutlineInputBorder(
@@ -361,6 +377,8 @@ class _EditProfileState extends State<EditProfile> {
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.only(left: 12.sp),
                   hintText: "Enter your Contact Number",
+                  fillColor: Colors.white,
+                  filled: true,
                   prefixIcon: Padding(
                     padding: const EdgeInsets.all(12),
                     child: SvgPicture.asset(
@@ -373,11 +391,11 @@ class _EditProfileState extends State<EditProfile> {
                     color: const Color(0xff4A4A4A).withOpacity(0.6),
                   ),
                   enabledBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xffB4B4B4)),
+                    borderSide: BorderSide(color: Color(0xffE7E7E7)),
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
                   focusedBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xffB4B4B4)),
+                    borderSide: BorderSide(color: Color(0xffE7E7E7)),
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
                   border: OutlineInputBorder(
@@ -396,6 +414,8 @@ class _EditProfileState extends State<EditProfile> {
                 ),
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.only(left: 12.sp),
+                  fillColor: Colors.white,
+                  filled: true,
                   hintText: "Enter your Address",
                   prefixIcon: Padding(
                     padding: const EdgeInsets.all(12),
@@ -409,11 +429,11 @@ class _EditProfileState extends State<EditProfile> {
                     color: const Color(0xff4A4A4A).withOpacity(0.6),
                   ),
                   enabledBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xffB4B4B4)),
+                    borderSide: BorderSide(color: Color(0xffE7E7E7)),
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
                   focusedBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xffB4B4B4)),
+                    borderSide: BorderSide(color: Color(0xffE7E7E7)),
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
                   border: OutlineInputBorder(

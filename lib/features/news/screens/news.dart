@@ -297,7 +297,8 @@ class _NewsPageState extends State<NewsPage> {
                                         style: GoogleFonts.poppins(
                                           fontSize: 12.sp,
                                           fontWeight: FontWeight.w400,
-                                          color: const Color(0xff4a4a4a),
+                                          color: const Color(0xff4a4a4a)
+                                              .withOpacity(0.6),
                                         ),
                                       ),
                                     ),
@@ -307,8 +308,12 @@ class _NewsPageState extends State<NewsPage> {
                                     Container(
                                       width: 3.sp,
                                       height: 3.sp,
-                                      color: const Color(0xff4A4A4A)
-                                          .withOpacity(0.8),
+                                      decoration: BoxDecoration(
+                                        color: const Color(0xff4A4A4A)
+                                            .withOpacity(0.8),
+                                        borderRadius:
+                                            BorderRadius.circular(20.sp),
+                                      ),
                                     ),
                                     SizedBox(
                                       width: 5.sp,
@@ -318,7 +323,8 @@ class _NewsPageState extends State<NewsPage> {
                                       style: GoogleFonts.poppins(
                                         fontSize: 12.sp,
                                         fontWeight: FontWeight.w400,
-                                        color: const Color(0xff4a4a4a),
+                                        color: const Color(0xff4a4a4a)
+                                            .withOpacity(0.6),
                                       ),
                                     ),
                                   ],
@@ -330,13 +336,21 @@ class _NewsPageState extends State<NewsPage> {
                         SizedBox(
                           height: 15.sp,
                         ),
-                        SizedBox(
-                          width: 342.5.sp,
-                          child: Divider(
-                            thickness: 1.sp,
-                            color: const Color(0xffF0F0F0),
+                        if (index != 3)
+                          Column(
+                            children: [
+                              SizedBox(
+                                width: 342.5.sp,
+                                child: Divider(
+                                  thickness: 1.sp,
+                                  color: const Color(0xffF0F0F0),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 15.sp,
+                              ),
+                            ],
                           ),
-                        ),
                       ],
                     ),
                   ),
