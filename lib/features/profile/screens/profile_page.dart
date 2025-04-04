@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:riyadh_kmcc_new/core/constants/font_constants.dart';
+import 'package:riyadh_kmcc_new/core/globals.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../core/constants/constants.dart';
 import '../../events/screens/attended_events.dart';
@@ -194,6 +196,14 @@ class _ProfilePageState extends State<ProfilePage> {
                   icon: "assets/profile/logout.svg",
                   text: "Logout",
                   isBorderEnabled: false,
+                  onTap: () async {
+                    SharedPreferences prefs =
+                        await SharedPreferences.getInstance();
+                    prefs.remove("token");
+                    prefs.remove("uid");
+                    token = "";
+                    uid = "";
+                  },
                 ),
               ],
             ),

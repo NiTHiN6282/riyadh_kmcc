@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'features/home/screens/bottom_bar.dart';
+import 'features/auth/screens/splash_screen.dart';
 
 void main() {
   runApp(
@@ -28,7 +28,7 @@ class MainApp extends StatelessWidget {
       builder: (_, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'First Method',
+          title: 'KMCC',
           // You can use the library anywhere in the app even in theme
           theme: ThemeData(
             primarySwatch: Colors.blue,
@@ -37,7 +37,7 @@ class MainApp extends StatelessWidget {
           home: child,
         );
       },
-      child: const BottomBar(),
+      child: const SplashScreen(),
     );
   }
 }
